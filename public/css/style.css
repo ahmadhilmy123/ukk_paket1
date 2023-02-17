@@ -63,6 +63,7 @@
   outline: none;
 }
 
+
 a {
   color: #6777ef;
   font-weight: 500;
@@ -2409,12 +2410,12 @@ body, html {
 }
 
 body {
-  background-color: #f4f6f9;
+  background-image: url("./public/img/products/product-2-50.png");
   font-size: 14px;
   font-weight: 400;
   font-family: "Nunito", "Segoe UI", arial;
-  color: #6c757d;
 }
+
 
 a.bb {
   text-decoration: none;
