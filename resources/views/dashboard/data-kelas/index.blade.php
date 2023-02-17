@@ -9,11 +9,16 @@
 @endpush
 
 @section('main')
-	<div class="row">
-         <div class="col-md-12">
-              <div class="card">
+<div class="main-content warna">
+    <section class="section">
+        <div class="section-header">
+            <h1>Data Barang<h1>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
                   <div class="card-body">
-                       <div class="card-title">{{ __('Tambah Kelas') }}</div>
+                       <div class="card-title li">{{ __('Tambah Kelas') }}</div>
                      
                         <form method="post" action="{{ url('/dashboard/data-kelas') }}">
                            @csrf
@@ -30,7 +35,7 @@
                               <span class="text-danger">@error('keahlian') {{ $message }} @enderror</span>
                            </div>
                            
-                           <button type="submit" class="btn btn-success btn-rounded">
+                           <button type="submit" class="btn btn-rounded">
                                  <i class="mdi mdi-check"></i> Simpan
                            </button>
                         
@@ -44,7 +49,7 @@
            <div class="col-md-12">
 			<div class="card">
 				<div class="card-body">
-					<div class="card-title">Data SPP</div>
+					<div class="card-title li">Data SPP</div>
                <div class="table-responsive">
                   <table class="table-striped table" id="table-1">
                    <thead>

@@ -1,14 +1,18 @@
-@extends('layouts.dashboard')
+@section('title', 'History')
 
-@section('breadcrumb')
-     <li class="breadcrumb-item">Dashboard</li>
-	<li class="breadcrumb-item">Petugas</li>
-     <li class="breadcrumb-item active">Tambah</li>
-@endsection
+@push('style')
+<link rel="stylesheet" href="{{ asset('library/datatables/media/css/jquery.dataTables.min.css') }}">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap4.min.css" />
+<link rel="stylesheet" href="https://cdn.datatables.net/select/1.3.3/css/select.bootstrap4.min.css" />
+@endpush
 
-@section('content')
-
-	<div class="row">
+@section('main')
+<div class="main-content">
+   <section class="section">
+       <div class="section-header">
+           <h1>Data Barang<h1>
+       </div>
+       <div class="row">
          <div class="col-md-12">
               <div class="card">
                   <div class="card-body">

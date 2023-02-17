@@ -1,3 +1,8 @@
+@push('style')
+<link rel="stylesheet" href="{{ asset('library/datatables/media/css/jquery.dataTables.min.css') }}">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap4.min.css" />
+<link rel="stylesheet" href="https://cdn.datatables.net/select/1.3.3/css/select.bootstrap4.min.css" />
+@endpush
 <div class="navbar-bg"></div>
 <nav class="navbar navbar-expand-lg main-navbar">
     <form class="form-inline mr-auto">
@@ -270,3 +275,11 @@
         </li>
     </ul>
 </nav>
+@push('scripts')
+<!-- JS Libraies -->
+<script src="{{ asset('library/datatables/media/js/jquery.dataTables.min.js') }}"></script>
+<script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
+<script src="https://cdn.datatables.net/select/1.3.3/js/select.bootstrap4.js"></script>
+<script src="{{ asset('js/after.js') }}"></script>
+<script src="{{ asset('js/page/modules-datatables.js') }}"></script>
+@endpush

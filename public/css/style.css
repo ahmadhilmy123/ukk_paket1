@@ -63,6 +63,10 @@
   outline: none;
 }
 
+.li{
+  color: white;
+}
+
 
 a {
   color: #6777ef;
@@ -253,7 +257,7 @@ select.form-control:not([size]):not([multiple]) {
 .form-group .control-label,
 .form-group > label {
   font-weight: 600;
-  color: #34395e;
+  color: #ffffff;
   font-size: 12px;
   letter-spacing: 0.5px;
 }
@@ -728,6 +732,7 @@ select.form-control:not([size]):not([multiple]) {
 .card {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03);
   background-color: #fff;
+  box-shadow: 0 2px 6px #e6ecf1;
   border-radius: 3px;
   border: none;
   position: relative;
@@ -743,6 +748,7 @@ select.form-control:not([size]):not([multiple]) {
 .card .card-body {
   padding-top: 20px;
   padding-bottom: 20px;
+  background-color: #2c2c2c;
 }
 .card .card-body .section-title {
   margin: 30px 0 10px 0;
@@ -1124,10 +1130,10 @@ select.form-control:not([size]):not([multiple]) {
 }
 /* 3.6 Table */
 .table {
-  color: inherit;
+  color: #ffffff;
 }
 .table td, .table:not(.table-bordered) th {
-  border-top: none;
+  /* border-top: none; */
 }
 .table:not(.table-sm):not(.table-md):not(.dataTable) td, .table:not(.table-sm):not(.table-md):not(.dataTable) th {
   padding: 0 25px;
@@ -1137,7 +1143,7 @@ select.form-control:not([size]):not([multiple]) {
 .table:not(.table-sm) thead th {
   border-bottom: none;
   background-color: rgba(0, 0, 0, 0.04);
-  color: #666;
+  color: #ffffff;
   padding-top: 15px;
   padding-bottom: 15px;
 }
@@ -1296,7 +1302,7 @@ table tr:hover .table-links {
   margin: 0 3px;
 }
 .page-item.active .page-link {
-  background-color: #6777ef;
+  background-color: #666666;
   border-color: #6777ef;
 }
 .page-item.disabled .page-link {
@@ -1434,6 +1440,8 @@ h6 .badge {
   line-height: 24px;
   padding: 0.3rem 0.8rem;
   letter-spacing: 0.5px;
+  color: white;
+  background-color: #000000;
 }
 .btn.btn-icon-split {
   position: relative;
@@ -1872,10 +1880,10 @@ h6 .badge {
 .navbar {
   height: 70px;
   left: 250px;
-  right: 5px;
+  right: 2px;
   position: absolute;
   z-index: 890;
-  background-color: transparent;
+  background-color: rgb(2, 0, 102);
 }
 .navbar.active {
   background-color: #6777ef;
@@ -1889,7 +1897,7 @@ h6 .badge {
   left: 0;
   width: 100%;
   height: 115px;
-  background-color: #6777ef;
+  background-color: #011297;
   z-index: -1;
 }
 
@@ -2142,7 +2150,7 @@ h6 .badge {
     color: #fff;
   }
   .navbar {
-    left: 5px;
+    left: 0;
     right: 0;
   }
   .navbar .dropdown-menu {
@@ -2343,6 +2351,11 @@ a.dropdown-item:focus, a.dropdown-item:active, a.dropdown-item.active {
   color: #fff;
 }
 
+.warna{
+  background-color: #000000;
+
+}
+
 @media (max-width: 575.98px) {
   .dropdown-list-toggle {
     position: static;
@@ -2410,7 +2423,8 @@ body, html {
 }
 
 body {
-  background-image: url("./public/img/products/product-2-50.png");
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(4,2,57,1) 12%, rgba(5,3,67,1) 18%, rgba(6,4,77,1) 24%, rgba(6,5,84,1) 28%, rgba(7,7,100,1) 37%, rgba(9,9,121,1) 49%, rgba(8,43,143,1) 58%, rgba(7,59,154,1) 62%, rgba(7,85,174,1) 68%, rgba(4,119,194,1) 77%, rgba(3,139,207,1) 82%, rgba(2,176,231,1) 94%, rgba(0,212,255,1) 100%);
   font-size: 14px;
   font-weight: 400;
   font-family: "Nunito", "Segoe UI", arial;
@@ -2654,7 +2668,8 @@ pre {
 }
 
 .shadow-light {
-  box-shadow: 0 2px 6px #e6ecf1;
+  box-shadow: 0 5px 6px #e6ecf1;
+  background-color: white;
 }
 
 .shadow-dark {
@@ -3035,8 +3050,8 @@ pre {
   top: 0;
   height: 100%;
   width: 250px;
-  background: rgb(0,36,28);
-  background: linear-gradient(90deg, rgba(0,36,28,1) 0%, rgba(42,0,255,1) 96%);
+  background: rgb(182,34,195);
+  background: linear-gradient(0deg, rgba(182,34,195,1) 29%, rgba(163,87,192,1) 52%);
   z-index: 880;
   left: 0;
 }
@@ -3445,7 +3460,7 @@ body.layout-3 .main-footer {
   width: 100%;
 }
 .main-sidebar .sidebar-menu li a:hover {
-  background-color: #056494;
+  background-color: #d80beb65;
 }
 .main-sidebar .sidebar-menu li.active a {
   color: #6777ef;
@@ -3528,6 +3543,7 @@ body.layout-3 .main-footer {
 }
 
 .simple-footer {
+  color: #ffffff;
   text-align: center;
   margin-top: 40px;
   margin-bottom: 40px;

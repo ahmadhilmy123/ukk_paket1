@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'data-siswa')
+@section('title', 'History')
 
 @push('style')
 <link rel="stylesheet" href="{{ asset('library/datatables/media/css/jquery.dataTables.min.css') }}">
@@ -8,13 +8,17 @@
 <link rel="stylesheet" href="https://cdn.datatables.net/select/1.3.3/css/select.bootstrap4.min.css" />
 @endpush
 
-
 @section('main')
-<div class="row">
-    <div class="col-md-12">
-        <div class="card">
+<div class="main-content warna">
+    <section class="section">
+        <div class="section-header">
+            <h1>Data Barang<h1>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
             <div class="card-body">
-                <div class="card-title">Data Siswa</div>
+                <div class="card-title li">Data Siswa</div>
                           <a href="{{ url('dashboard/data-siswa/create') }}" class="btn btn-success btn-rounded float-right mb-3">
                              <i class="mdi mdi-plus-circle"></i> {{ __('Tambah Siswa') }}
                           </a>

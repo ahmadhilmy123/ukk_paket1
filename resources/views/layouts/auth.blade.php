@@ -18,6 +18,7 @@
 
     @stack('style')
 
+   
     <!-- Template CSS -->
     <link rel="stylesheet"
         href="{{ asset('css/style.css') }}">
@@ -41,7 +42,8 @@
 
 <body>
     <div id="app">
-        <section class="section">
+        <div id="particles-js">
+        <section class="section ">
             <div class="container mt-5">
                 <div class="row">
                     <div
@@ -54,6 +56,7 @@
 
                         <!-- Footer -->
                         @include('components.auth-footer')
+                    </div>
                     </div>
                 </div>
             </div>
@@ -74,6 +77,7 @@
     <!-- Template JS File -->
     <script src="{{ asset('js/scripts.js') }}"></script>
     <script src="{{ asset('js/custom.js') }}"></script>
+    <script src="{{ asset('js/app.js') }}"></script> 
 </body>
 
 </html>

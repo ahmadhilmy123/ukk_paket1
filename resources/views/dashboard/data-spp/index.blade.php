@@ -1,17 +1,24 @@
-@extends('layouts.dashboard')
+@extends('layouts.app')
 
-@section('breadcrumb')
-	<li class="breadcrumb-item">Dashboard</li>
-	<li class="breadcrumb-item active">SPP</li>
-@endsection
+@section('title', 'History')
 
-@section('content')
+@push('style')
+<link rel="stylesheet" href="{{ asset('library/datatables/media/css/jquery.dataTables.min.css') }}">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap4.min.css" />
+<link rel="stylesheet" href="https://cdn.datatables.net/select/1.3.3/css/select.bootstrap4.min.css" />
+@endpush
 
-	<div class="row">
-         <div class="col-md-12">
-              <div class="card">
+@section('main')
+<div class="main-content warna">
+    <section class="section">
+        <div class="section-header">
+            <h1>Data Barang<h1>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
                   <div class="card-body">
-                       <div class="card-title">{{ __('Tambah SPP') }}</div>
+                       <div class="card-title li">{{ __('Tambah SPP') }}</div>
                      
                         <form method="post" action="{{ url('/dashboard/data-spp') }}">
                            @csrf
@@ -28,7 +35,7 @@
                               <span class="text-danger">@error('nominal') {{ $message }} @enderror</span>
                            </div>
                            
-                           <button type="submit" class="btn btn-success btn-rounded float-right">
+                           <button type="submit" class="btn  btn-rounded float-right">
                                  <i class="mdi mdi-check"></i> Simpan
                            </button>
                         
@@ -42,58 +49,54 @@
            <div class="col-md-12">
 			<div class="card">
 				<div class="card-body">
-					<div class="card-title">Data SPP</div>
+					<div class="card-title li">Data SPP</div>
                               
-						<div class="table-responsive mb-3">
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">#</th>
-                                            <th scope="col">TAHUN</th>
-								    <th scope="col">NOMINAL</th>
-                                            <th scope="col">DIBUAT</th>
-								    <th scope="col"></th>                                        
-                                        </tr>
-                                    </thead>
-                                    <tbody>
+               <div class="table-responsive">
+                  <table class="table-striped table" id="table-1">
+                      <thead>
+                      <tr>
+                       <th scope="col">#</th>
+                       <th scope="col">TAHUN</th>
+							  <th scope="col">NOMINAL</th>
+                       <th scope="col">DIBUAT</th>
+							  <th scope="col"></th>                                        
+                      </tr>
+                     </thead>
+                      <tbody>
 								@php 
 								$i=1;
 								@endphp
 								@foreach($spp as $value)
-                                        <tr>					    
-                                            <th scope="row">{{ $i }}</th>
-                                            <td>{{ $value->tahun }}</td>
-								    <td>{{ $value->nominal }}</td>
-                                            <td>{{ $value->created_at->format('d M, Y') }}</td>
-					
-                                            <td>										                           
-                               	 		  <div class="hide-menu">
-                                    			<a href="javascript:void(0)" class="text-dark" id="actiondd" role="button" data-toggle="dropdown">
-                                       				<i class="mdi mdi-dots-vertical"></i>
-                                    			</a>
-                                    				<div class="dropdown-menu dropdown-menu-right" aria-labelledby="actiondd">
-                                        			<a class="dropdown-item" href="{{ url('dashboard/data-spp/'.$value->id.'/edit') }}"><i class="ti-pencil"></i> Edit </a>
-											<form method="post" action="{{ url('dashboard/data-spp', $value->id) }}" id="delete{{ $value->id }}">
-												@csrf
-												@method('delete')
-												
-												<button type="button" class="dropdown-item" onclick="deleteData({{ $value->id }})">
+                      <tr>					    
+                           <th scope="row">{{ $i }}</th>
+                           <td>{{ $value->tahun }}</td>
+								   <td>{{ $value->nominal }}</td>
+                           <td>{{ $value->created_at->format('d M, Y') }}</td>
+					            <td>										                           
+                               <div class="hide-menu">
+                           			<a href="javascript:void(0)" class="text-dark" id="actiondd" role="button" data-toggle="dropdown">
+                                       <i class="mdi mdi-dots-vertical"></i>
+                                          </a>
+                                    	<div class="dropdown-menu dropdown-menu-right" aria-labelledby="actiondd">
+                                        <a class="dropdown-item" href="{{ url('dashboard/data-spp/'.$value->id.'/edit') }}"><i class="ti-pencil"></i> Edit </a>
+											       <form method="post" action="{{ url('dashboard/data-spp', $value->id) }}" id="delete{{ $value->id }}">
+												    @csrf
+												    @method('delete')
+												   <button type="button" class="dropdown-item" onclick="deleteData({{ $value->id }})">
 													<i class="ti-trash"></i> Hapus
 												</button>	
-											
-											</form>																																																
-                                        			                    							                                                                            
-                                				</div>
-                            				</div>								
-								    </td>					
-                                        </tr>
+											</form>																					                    							                                                                            
+                              </div>
+                           </div>								
+								  </td>					
+                        </tr>
 								@php
 								$i++;
 								@endphp
 								@endforeach                                  
-                                    </tbody>
-                                </table>
-                            </div>
+             </tbody>
+        </table>
+       </div>
 
 					  <!-- Pagination -->
 					@if($spp->lastPage() != 1)

@@ -1,21 +1,28 @@
-@extends('layouts.dashboard')
+@extends('layouts.app')
 
-@section('breadcrumb')
-     <li class="breadcrumb-item">Dashboard</li>
-	<li class="breadcrumb-item active">Petugas</li>
-@endsection
+@section('title', 'History')
 
-@section('content')
-<div class="row">
-		<div class="col-md-12">
-			<div class="card">
+@push('style')
+<link rel="stylesheet" href="{{ asset('library/datatables/media/css/jquery.dataTables.min.css') }}">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap4.min.css" />
+<link rel="stylesheet" href="https://cdn.datatables.net/select/1.3.3/css/select.bootstrap4.min.css" />
+@endpush
+
+@section('main')
+<div class="main-content warna">
+    <section class="section">
+        <div class="section-header">
+            <h1>Data Barang<h1>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
 				<div class="card-body">
-					<div class="card-title">Data Petugas</div>
                               <a href="{{ url('dashboard/data-petugas/create') }}" class="btn btn-success btn-rounded float-right mb-3">
                                  <i class="mdi mdi-plus-circle"></i> {{ __('Tambah Petugas') }}
                               </a>
-						<div class="table-responsive mb-3">
-                                <table class="table">
+							  <div class="table-responsive">
+								<table class="table-bordered table-dark" id="table-1">
                                     <thead>
                                         <tr>
                                             <th scope="col">#</th>
