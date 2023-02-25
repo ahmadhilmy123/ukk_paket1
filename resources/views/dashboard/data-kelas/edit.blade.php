@@ -16,8 +16,8 @@
        </div>
        <div class="row">
          <div class="col-md-12">
-              <div class="card">
-                  <div class="card-body">
+            <div class="card-lu1">
+               <div class="card-body lu1 cal">
                        <div class="card-title li">{{ __('Edit Kelas') }}</div>
                      
                         <form method="post" action="{{ url('/dashboard/data-kelas', $edit->id) }}">

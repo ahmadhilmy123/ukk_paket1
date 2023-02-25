@@ -28,7 +28,7 @@ class HomeController extends Controller
     {
         $data = [
             'user' => User::find(auth()->user()->id),
-            'pembayaran' => Pembayaran::orderBy('id', 'desc')->paginate(3),
+            'pembayaran' => Pembayaran::orderBy('id', 'ASC')->paginate(),
         ];
       
         return view('dashboard.index', $data);

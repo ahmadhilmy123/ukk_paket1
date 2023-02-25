@@ -23,7 +23,7 @@ class CreateSiswaTable extends Migration
             $table->text('alamat');
             $table->string('nomor_telp');
             $table->bigInteger('id_spp')->unsigned();
-            $table->foreign('id_spp')->references('id')->on('spp');
+            $table->foreign('id_spp')->references('id')->on('spp')->onDelete('cascade');
             $table->timestamps();
         });
     }

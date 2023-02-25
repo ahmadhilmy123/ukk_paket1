@@ -42,14 +42,13 @@
 </head>
 
 <body>
-    <div id="app">
+    <div id="app1">
         <div class="main-wrapper warna">
             <!-- Header -->
-            @include('components.header')
-
+            @include('components.header1')
 
             <!-- Sidebar -->
-            @include('components.sidebar')
+            @include('components.sidebar1')
 
             <!-- Content -->
             @yield('main')

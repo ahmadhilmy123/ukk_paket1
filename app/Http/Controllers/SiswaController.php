@@ -29,7 +29,7 @@ class SiswaController extends Controller
     {
 	   $data = [
             'user' => User::find(auth()->user()->id),
-            'siswa' => Siswa::orderBy('id', 'DESC')->paginate(10),
+            'siswa' => Siswa::orderBy('id', 'ASC')->paginate(),
         ];
       
         return view('dashboard.data-siswa.index', $data);

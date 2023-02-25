@@ -1,12 +1,8 @@
 @extends('layouts.app')
 
-@section('title', 'History')
+@section('title', 'Edit Barang')
 
-@push('style')
-<link rel="stylesheet" href="{{ asset('library/datatables/media/css/jquery.dataTables.min.css') }}">
-<link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap4.min.css" />
-<link rel="stylesheet" href="https://cdn.datatables.net/select/1.3.3/css/select.bootstrap4.min.css" />
-@endpush
+@section('main')
 
 @section('main')
 <div class="main-content warna">
@@ -15,8 +11,8 @@
            <h1>Data Barang<h1>
        </div>
        <div class="col-12">
-         <div class="card">
-                  <div class="card-body">
+         <div class="card-lu1">
+            <div class="card-body lu1">
                        <div class="card-title">{{ __('Edit SPP') }}</div>
                      
                         <form method="post" action="{{ url('/dashboard/data-spp', $edit->id) }}">

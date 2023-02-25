@@ -1,19 +1,19 @@
-@extends('layouts.dashboard')
+@extends('layouts.app')
 
-@section('breadcrumb')
-   <li class="breadcrumb-item">Dashboard</li>
-   <li class="breadcrumb-item">Pembayaran</li>
-   <li class="breadcrumb-item active">Edit</li>
-@endsection
+@section('title', 'Edit Barang')
 
-@section('content')
+@section('main')
 
-   <div class="row">
-      <div class="col-md-12">
-      
-         <div class="card">
-            <div class="card-body">
-               <div class="card-title">Edit Pembayaran</div>
+@section('main')
+<div class="main-content warna">
+   <section class="section">
+       <div class="section-header">
+           <h1>Data Barang<h1>
+       </div>
+       <div class="col-12">
+         <div class="card-lu1">
+            <div class="card-body lu1">
+               <div class="card-title li">Edit Pembayaran</div>
                
                   <form method="post" action="{{ url('dashboard/pembayaran', $edit->id) }}">
                      @csrf

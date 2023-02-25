@@ -68,6 +68,6 @@ class SiswaLoginController extends Controller
           'pembayaran' => Pembayaran::where('id_siswa', Session::get('id'))->paginate(10)
       ];
        
-      return view('dashboard.siswa.index', $data);
+      return view('dashboard.siswa.index1', $data);
     }
 }

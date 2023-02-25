@@ -36,10 +36,10 @@ class LaporanController extends Controller
         PDF::setOptions(['dpi' => 150, 'defaultFont' => 'sans-serif']);
      
       $data = [
-          'pembayaran' => Pembayaran::orderBy('created_at', 'DESC')->get()
+          'pembayaran' => Pembayaran::orderBy('created_at', 'ASC')->get()
         ];
 
         $pdf = PDF::loadView('pdf.laporan', $data);
-        return $pdf->download('Laporan-pembayaran-spp.pdf');
+        return $pdf->stream('Laporan-pembayaran-spp.pdf');
     }
 }

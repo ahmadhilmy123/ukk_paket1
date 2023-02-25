@@ -244,22 +244,27 @@
                 </div>
             </div>
         </li>
-        <li class="dropdown"><a href="#"
-                data-toggle="dropdown"
-                class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-                <img alt="image"
-                    src="{{ asset('img/avatar/avatar-1.png') }}"
-                    class="rounded-circle mr-1">
-                <div class="d-sm-none d-lg-inline-block">Hi, {{auth()->user()->name}}</div>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right">
-                <a class="dropdown-item " href="{{ route('logout') }}" onclick="event.preventDefault();
-                 document.getElementById('logout-form').submit();" ><i class="fa fa-power-off m-r-5 m-l-5"></i> Logout</a>
-				<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                 @csrf
-               </form>
-        </li>
-    </ul>
+        <div class="user-profile d-flex no-block dropdown m-t-20">
+            <div class="user-pic"><img src="{{ url('assets/images/users/d3.jpg') }}" alt="users" class="rounded-circle" width="40" /></div>
+            <div class="user-content hide-menu m-l-10">
+                <a href="javascript:void(0)" class="" id="Userdd" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <h5 class="m-b-0 user-name font-medium">{{ session('nama') }}<i class="ml-2 fa fa-angle-down"></i></h5>
+                    <span class="op-5 user-email">NISN : {{ session('nisn') }}</span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="Userdd">
+                                                                                                                                                        
+                    <a class="dropdown-item" href="{{ url('siswa/logout')}}"><i class="fa fa-power-off m-r-5 m-l-5"></i> Logout</a>
+            
+                </div>
+            </div>
+        </div>
+        <!-- End User Profile-->
+    </li>                      
+    <!-- User Profile-->
+    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('dashboard/siswa/histori') }}" aria-expanded="false"><i class="mdi mdi-note-multiple"></i><span class="hide-menu">Histori Pembayaran Siswa</span></a></li>
+                                                                  
+</ul>
+
 </nav>
 @push('scripts')
 <!-- JS Libraies -->

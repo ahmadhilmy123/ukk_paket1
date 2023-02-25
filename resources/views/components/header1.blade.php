@@ -250,7 +250,7 @@
                 <img alt="image"
                     src="{{ asset('img/avatar/avatar-1.png') }}"
                     class="rounded-circle mr-1">
-                <div class="d-sm-none d-lg-inline-block">Hi, {{auth()->user()->name}}</div>
+                <div class="d-sm-none d-lg-inline-block">Hi, {{ session('nama') }}</div>
             </a>
             <div class="dropdown-menu dropdown-menu-right">
                 <a class="dropdown-item " href="{{ route('logout') }}" onclick="event.preventDefault();

@@ -25,7 +25,7 @@ class PetugasController extends Controller
     public function index()
     {
         $data = [
-            'users' => User::orderBy('id', 'DESC')->paginate(10),
+            'users' => User::orderBy('id', 'ASC')->paginate(),
             'user' => User::find(auth()->user()->id)
          ];
          
