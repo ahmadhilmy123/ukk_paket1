@@ -8,7 +8,9 @@
         href="{{ asset('library/bootstrap-social/bootstrap-social.css') }}">
 @endpush
 
+
 @section('main')
+@include('sweetalert::alert')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-25">
@@ -20,7 +22,7 @@
                         @csrf
 
                         <div class="field">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('NISN') }} :</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('NISN') }} </label>
                                 <input type="text" class="input-field @error('nisn') is-invalid @enderror" name="nisn" value="{{ old('nisn') }}" required autofocus>
                                 @error('nisn')
                                     <span class="invalid-feedback" role="alert">
@@ -45,7 +47,7 @@
                             <button class="button2">Sign Up</button>
                             </div>
                             <div class="button3">
-                                Login untuk <b>petugas</b> silahkan <a href="{{ url('login') }}" class="text-white" style="text-decoration:none;">Klik Disini</a>
+                            <a href="{{ url('login') }}" class="text-white" style="text-decoration:none;"><center>Login untuk <b>petugas</b> silahkan Klik Disini</center></a>
                              </div>
                         </div>
                    </div>

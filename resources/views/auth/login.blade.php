@@ -29,9 +29,9 @@
                                 <input id="email" type="email" class="input-field @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                                 @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                    <div class="invalid-feedback" role="alert">
+                                        Email atau password anda salah
+                                    </div>
                                 @enderror
                         </div>
 
@@ -52,7 +52,7 @@
                             <button class="button2">Sign Up</button>
                             </div>
                             <div class="button3">
-                                Login untuk <b>siswa</b> silahkan <a href="{{ url('login/siswa') }}" class="text-white" style="text-decoration:none;">Klik Disini</a>
+                                 <a href="{{ url('login/siswa') }}" class="text-white" style="text-decoration:none;"><center>Login untuk <b>siswa</b> silahkan Klik Disini</center></a>
                              </div>
                         </div>
                    </div>

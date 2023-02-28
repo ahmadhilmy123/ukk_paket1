@@ -17,7 +17,7 @@ class HistoryController extends Controller
     public function index()
     {
         $data = [
-            'pembayaran' => Pembayaran::orderBy('id', 'DESC')->paginate(15),
+            'pembayaran' => Pembayaran::orderBy('id', 'ASC')->paginate(15),
             'user' => User::find(auth()->user()->id)
          ];
          

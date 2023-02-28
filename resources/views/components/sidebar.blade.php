@@ -1,3 +1,4 @@
+@include('sweetalert::alert')
 <div class="main-sidebar sidebar-style-2">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
@@ -38,7 +39,7 @@
 						<li class="sidebar-item">
 							<a class="sidebar-liauth()->user()->level == 'admin'nk waves-effect waves-dark sidebar-link" href="{{ url('dashboard/pembayaran') }}" aria-expanded="false">
 								<i class="fa-solid fa-file-invoice-dollar"></i>
-									<span class="hide-menu">Entri Transaksi Pembayaran</span>
+									<span class="hide-menu">Pembayaran Spp</span>
 							</a>
 						</li>
                               @endif                       

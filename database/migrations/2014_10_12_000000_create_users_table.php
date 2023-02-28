@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('level', 20);
+            $table->integer('nisn')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

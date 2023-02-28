@@ -26,7 +26,7 @@
                                     <div class="comment-text active w-100">
                                     <hr>
                                     <span class="badge badge-success badge-rounded float-right">{{ $history->created_at->diffforHumans() }}</span>                                    
-                                        <h6 class="font-medium">{{ $history->siswa->nama }}</h6>                                       
+                                        <h6 class="font-medium p1">{{ $history->siswa->nama }}</h6>                                       
                                         <span class="m-b-15 d-block">
                                              <ul class="list-group list-group-flush lu1">
                                                 <li class="list-group-item lu1 p1">Kelas {{ $history->siswa->kelas->nama_kelas }}</li>

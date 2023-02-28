@@ -9,6 +9,12 @@
 <body>
 
    <style>
+
+      @font-face {
+          font-family: 'broadwayscd-regular';
+          src: url({{ storage_path("fonts/BroadwaySCD.ttf") }}') format('truetype');
+        }
+
       .page-break{
          page-break-after:always;
        }
@@ -16,10 +22,17 @@
          text-align:center;
        }
       .text-header {
-         font-size:1.1rem;
+         font-size:1.1rem; 
+      }
+
+      .p3{
+         margin-top: 100px;
       }
       .size2 {
          font-size:1.4rem;
+      }
+      .size4 {
+         font-size:1.8rem;
       }
       .size1 {
          font-size:1rem;
@@ -81,14 +94,20 @@
          font-style:bold;
       }
       .text-bold {
-         font-style:bold;
+         /* font-family: 'broadwayscd-regular', sans-serif; */
+         font-style: bold;
+
+      }
+      .font{
+         font-family: 'broadwayscd-regular', sans-serif;
+         margin-top: 100px;
       }
       .size3{
-         font-size:1.9rem;
+         font-size:1.5rem;
       }
       .underline {
          text-decoration:underline;
-         color: rgb(1, 114, 189);
+         color: rgb(5, 100, 163);
       }
       .l1{
          font-size: 15px;
@@ -96,16 +115,16 @@
       }
       table {
          font-family: Arial, Helvetica, sans-serif;
-         color: #666;
-         text-shadow: 1px 1px 0px #fff;
-         background: #eaebec;
-         border: #ccc 1px solid;
+         color: #0f0f11;
+         text-shadow: 1px 1px 0px #8a8787;
+         background: #505152;
+         border: #b3a1a1 1px solid;
       }
       table th {
            padding: 10px 15px;
-           border-left:1px solid #e0e0e0;
-           border-bottom: 1px solid #e0e0e0;
-           background: #ededed;
+           border-left:1px solid #065fa8;
+           border-bottom: 1px solid #065fa8;
+           background: #065fa8;
        }  
        table tr {
            text-align: center;
@@ -134,9 +153,9 @@
       <img src="{{ public_path('img/avatar/logo1.png') }}" class="img" alt="logo.png" width="180">
       <div style="margin-left:5rem;">
          <span class="text-header text-bold text-danger size3">
-            YAYASAN SETYA BHAKTI
-            <span class="text-header text-bold text-danger size2">
-               <br> SMK TARUNA BHAKTI DEPOK<br>
+            YAYASAN SETYA BHAKTI<br></span>
+            <span class="font size4">
+                SMK TARUNA BHAKTI DEPOK<br>
                 <span class="text-header text-bold text-danger size1">
                   TERAKREDITASI: "A" No: 02.00/203/BAN-SM/XII/2018 <br>
             <span class="l1">Izin No: 421.4/1150/DISDIK/2004-NPSN: 20229232</span> <br> 

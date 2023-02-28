@@ -12,13 +12,17 @@
 <div class="main-content warna">
     <section class="section">
         <div class="section-header">
-            <h1>Data Barang<h1>
+            <h1>Histori Pembayaran<h1>
         </div>
         <div class="col-12">
-         <div class="card-lu1">
-            <div class="card-body lu1">
-               <div class="card-title">Histori Pembayaran</div>
-               
+            <div class="card-lu1">
+                <div class="card-body lu1 li">
+                    <div class="bd-highlight d-flex">
+                        <div class="p-2 flex-grow-1 bd-highlight text-right">
+                        <a href="{{ url('dashboard/laporan1/create') }}" class="btn btn-primary btn-rounded">Tanda Bukti</a>
+
+                    </div>
+                </div>
                <!--  Row -->
                               @foreach($pembayaran as $history)
                                 <div class="d-flex flex-row comment-row">

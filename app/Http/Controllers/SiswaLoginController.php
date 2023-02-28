@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Alert;
 use Session;
 use App\Siswa;
+use Dompdf\Dompdf;
 use App\Pembayaran;
 
 class SiswaLoginController extends Controller
@@ -28,7 +29,7 @@ class SiswaLoginController extends Controller
                $siswa = Siswa::where('nisn', $req->nisn)->get();
                
                foreach($siswa as $val) :
-                   Session::put('id', $val->id);
+                   Session::put('id', $val->id); 
                    $nama = $val->nama;
                endforeach;
                
@@ -69,5 +70,18 @@ class SiswaLoginController extends Controller
       ];
        
       return view('dashboard.siswa.index1', $data);
+    }
+
+    public function create(){
+
+    $siswa = session('id');
+    $pembayaran = Pembayaran::where('id_siswa', $siswa)->orderBy('created_at', 'ASC')->get();
+
+    $html = view('pdf.laporan1', compact('pembayaran'))->render();
+    $dompdf = new Dompdf();
+    $dompdf->loadHtml($html);
+    $dompdf->setPaper('A4', 'portrait');
+    $dompdf->render();
+    return $dompdf->stream('BUKTI-PEMBAYARAN-SISWA');
     }
 }

@@ -3,6 +3,7 @@
 <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap4.min.css" />
 <link rel="stylesheet" href="https://cdn.datatables.net/select/1.3.3/css/select.bootstrap4.min.css" />
 @endpush
+@include('sweetalert::alert')
 <div class="navbar-bg"></div>
 <nav class="navbar navbar-expand-lg main-navbar">
     <form class="form-inline mr-auto">
@@ -253,11 +254,7 @@
                 <div class="d-sm-none d-lg-inline-block">Hi, {{ session('nama') }}</div>
             </a>
             <div class="dropdown-menu dropdown-menu-right">
-                <a class="dropdown-item " href="{{ route('logout') }}" onclick="event.preventDefault();
-                 document.getElementById('logout-form').submit();" ><i class="fa fa-power-off m-r-5 m-l-5"></i> Logout</a>
-				<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                 @csrf
-               </form>
+                <a class="dropdown-item" href="{{ url('siswa/logout')}}"><i class="fa fa-power-off m-r-5 m-l-5"></i> Logout</a>
         </li>
     </ul>
 </nav>

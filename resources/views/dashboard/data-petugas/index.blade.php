@@ -12,7 +12,7 @@
 <div class="main-content warna">
     <section class="section">
         <div class="section-header">
-            <h1>Data Barang<h1>
+            <h1>Data Petugas<h1>
         </div>
         <div class="row">
             <div class="col-12">
