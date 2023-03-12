@@ -1,8 +1,10 @@
 @extends('layouts.app')
 
-@section('title', 'Edit Barang')
+@section('title', 'Edit pembayaran')
 
-@section('main')
+@push('style')
+<link rel="shortcut icon" href="{{ asset('img/avatar/taruna.ico') }}" type="image/x-icon">
+@endpush
 
 @section('main')
 <div class="main-content warna">

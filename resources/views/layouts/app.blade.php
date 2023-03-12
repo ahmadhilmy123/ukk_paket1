@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no"
         name="viewport">
-    <title>@yield('title') &mdash; Stisla</title>
+        <link rel="shortcut icon" href="img/avatar/taruna.ico" type="image/x-icon">
+        <title>@yield('title') &mdash; SPP</title>
 
     <!-- General CSS Files -->
     <link rel="stylesheet"
@@ -53,6 +54,7 @@
 
             <!-- Content -->
             @yield('main')
+        
 
             <!-- Footer -->
             @include('components.footer')

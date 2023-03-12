@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@push('style')
+<link rel="shortcut icon" href="{{ asset('img/avatar/taruna.ico') }}" type="image/x-icon">
+@endpush
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">

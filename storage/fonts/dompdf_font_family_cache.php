@@ -84,5 +84,8 @@ return array (
   'broadwayscd-regular' => array(
     'normal' => $fontDir . '/broadwayscd_regular_normal_e65b433cfe6198973bc4d7b506ad5bb0',
   ),
+  'cherolina' => array(
+    'normal' => $fontDir . '/cherolina_normal_240bd85b6b95647da83adbaa7e63a7b9',
+  ),
 );
 }; ?>

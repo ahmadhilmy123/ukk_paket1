@@ -33,6 +33,7 @@
       }
       .size4 {
          font-size:1.8rem;
+         line-height: 17px
       }
       .size1 {
          font-size:1rem;
@@ -101,6 +102,7 @@
       .font{
          font-family: 'broadwayscd-regular', sans-serif;
          margin-top: 100px;
+         /* line-height: 17px */
       }
       .size3{
          font-size:1.5rem;
@@ -180,25 +182,27 @@
   <table class="table-center mb-1">
       <thead>
          <tr>
-            <th>Petugas</th>
+            {{-- <th>Petugas</th> --}}
             <th>Siswa</th>
             <th>Kelas</th>
             <th>SPP Bulan</th>
             <th>SPP Nominal</th>
             <th>Nominal Bayar</th>
             <th>Tanggal Bayar</th>
+            <th>Tunggakan</th>
          </tr>
       </thead>
       <tbody>
-         @foreach($pembayaran as $val)
+         @foreach($pembayaran as $value)
          <tr>
-            <td>{{ $val->users->name }}</td>
-            <td>{{ $val->siswa->nama }}</td>
-            <td>{{ $val->siswa->kelas->nama_kelas }}</td>
-            <td>{{ $val->spp_bulan }}</td>
-            <td>{{ $val->siswa->spp->nominal }}</td>
-            <td>{{ $val->jumlah_bayar }}</td>
-            <td>{{ $val->created_at->format('d M, Y') }}</td>
+            {{-- <td>{{ $value->users->name }}</td> --}}
+            <td>{{$value->siswa->nama}}</td>
+            <td>{{$value->siswa->kelas->nama_kelas}}</td>
+            <td>{{$value->spp_bulan }}</td>
+            <td>Rp.{{ $spp = $value->siswa->spp->nominal }}</td>
+            <td>Rp.{{ $bayar = $value->jumlah_bayar }}</td>
+            <td>Rp.{{ $spp - $bayar }}.000</td>
+            <td>{{ $value->created_at->format('d M, Y') }}</td>
          
          </tr>
          @endforeach

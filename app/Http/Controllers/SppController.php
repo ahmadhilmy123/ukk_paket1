@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Spp;
-use App\User;
+use App\Models\Spp;
+use App\Models\User;
 use Alert;
 
 class SppController extends Controller
@@ -25,7 +25,7 @@ class SppController extends Controller
     public function index()
     {
         $data = [
-            'spp' => Spp::orderBy('id', 'ASC')->paginate(),
+            'spp' => Spp::orderBy('id', 'ASC')->paginate('1000'),
             'user' => User::find(auth()->user()->id)
         ];
       
@@ -55,12 +55,12 @@ class SppController extends Controller
             'numeric' => ':attribute harus berupa angka!',
             'min' => ':attribute minimal harus :min angka!',
             'max' => ':attribute maksimal harus :max angka!',
-            'integer' => ':attribute harus berupa nilai uang tanpa titik!'
+            'string' => ':attribute harus berupa nilai uang!'
          ];
          
         $validasi = $request->validate([
             'tahun' => 'required|min:4|max:4',
-            'nominal' => 'required|integer',
+            'nominal' => 'required|string',
         ], $messages);
       
        if($validasi) :

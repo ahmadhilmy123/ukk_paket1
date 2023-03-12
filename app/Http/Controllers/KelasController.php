@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Kelas;
-use App\User;
+use App\Models\Kelas;
+use App\Models\User;
 use Alert;
 
 class KelasController extends Controller
@@ -25,7 +25,7 @@ class KelasController extends Controller
     public function index()
     {
         $data = [
-              'kelas' => Kelas::orderBy('id', 'ASC')->paginate(),
+              'kelas' => Kelas::orderBy('id', 'ASC')->paginate('1000'),
               'user' => User::find(auth()->user()->id),
          ];
          

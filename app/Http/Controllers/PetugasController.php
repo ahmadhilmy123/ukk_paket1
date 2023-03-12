@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use App\User;
+use App\Models\User;
 use Alert;
 
 class PetugasController extends Controller
@@ -25,7 +25,7 @@ class PetugasController extends Controller
     public function index()
     {
         $data = [
-            'users' => User::orderBy('id', 'ASC')->paginate(),
+            'users' => User::orderBy('id', 'ASC')->paginate('1000'),
             'user' => User::find(auth()->user()->id)
          ];
          

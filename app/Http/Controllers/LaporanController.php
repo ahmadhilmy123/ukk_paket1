@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Pembayaran;
-use App\User;
-use App\Siswa;
-use App\Kelas;
+use App\Models\Pembayaran;
+use App\Models\User;
+use App\Models\Siswa;
+use App\Models\Kelas;
 use App;
 use PDF;
 
@@ -35,11 +35,36 @@ class LaporanController extends Controller
       
         PDF::setOptions(['dpi' => 150, 'defaultFont' => 'sans-serif']);
      
-      $data = [
-          'pembayaran' => Pembayaran::orderBy('created_at', 'ASC')->get()
-        ];
+        $pembayaran = Pembayaran::orderBy('created_at', 'ASC')->get();
 
-        $pdf = PDF::loadView('pdf.laporan', $data);
-        return $pdf->stream('Laporan-pembayaran-spp.pdf');
+        $kelas = request('kelas');
+        // $kelas = '';
+        // $kelas = 'XII RPL 1';
+        try {
+            
+          if ($kelas =="") {
+            $data = [
+              'pembayaran' => Pembayaran::orderBy('created_at', 'ASC')->get()
+            ];
+
+          }  else {
+            $i = 0;
+            foreach ($pembayaran as $value) {
+              if ($value->siswa->kelas->nama_kelas == $kelas) {
+                $data[$i] = $value;
+              }
+            }
+            $data = [
+              'pembayaran' => $data
+            ];
+          }
+          
+
+        // dd($data);
+          $pdf = PDF::loadView('pdf.laporan', $data);
+          return $pdf->stream('Laporan-pembayaran-spp.pdf');
+        } catch (\Throwable $th) {
+          return redirect('dashboard/laporan/');
+        }
     }
 }

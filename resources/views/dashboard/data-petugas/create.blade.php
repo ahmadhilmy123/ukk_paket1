@@ -1,18 +1,19 @@
 @extends('layouts.app')
 
-@section('title', 'History')
+@section('title', 'Data Petugas')
 
 @push('style')
 <link rel="stylesheet" href="{{ asset('library/datatables/media/css/jquery.dataTables.min.css') }}">
 <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap4.min.css" />
 <link rel="stylesheet" href="https://cdn.datatables.net/select/1.3.3/css/select.bootstrap4.min.css" />
+<link rel="shortcut icon" href="{{ asset('img/avatar/taruna.ico') }}" type="image/x-icon">
 @endpush
 
 @section('main')
 <div class="main-content warna">
     <section class="section">
         <div class="section-header">
-            <h1>Data Barang<h1>
+            <h1>Data Petugas<h1>
         </div>
         <div class="col-12">
             <div class="card-lu1">
@@ -77,26 +78,26 @@
 
 </div>
 
-@endsection
-
-@section('sweet')
-
-function button()
-{
-var password = $('#password').val()
-var confirm_password = $('#konfirmasi_password').val()
-
-if(password == confirm_password){
-$('#create').submit()
+@include('sweetalert::alert')
+<script>
+    
+    function button()
+    {
+        var password = $('#password').val()
+        var confirm_password = $('#konfirmasi_password').val()
+        
+        if(password == confirm_password){
+            $('#create').submit()
 }else{
 swal.fire({
-title: 'Terjadi Kesalahan!',
-text: "Konfirmasi password kamu tidak cocok, tolong coba lagi",
-icon: 'error',
-confirmButtonColor: '#3085d6',
-cancelButtonColor: '#d33',
+    title: 'Terjadi Kesalahan!',
+    text: "Konfirmasi password kamu tidak cocok, tolong coba lagi",
+    icon: 'error',
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
 })
 }
 }
 
+</script>
 @endsection

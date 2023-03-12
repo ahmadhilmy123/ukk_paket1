@@ -1,12 +1,16 @@
 @extends('layouts.app')
 
-@section('title', 'Edit Barang')
+@section('title', 'Edit Petugas')
+
+@push('style')
+<link rel="shortcut icon" href="{{ asset('img/avatar/taruna.ico') }}" type="image/x-icon">
+@endpush
 
 @section('main')
 <div class="main-content">
     <section class="section">
         <div class="section-header">
-            <h1>Data Barang<h1>
+            <h1>Edit Petugas<h1>
         </div>
         <div class="row">
             <div class="col-md-12">

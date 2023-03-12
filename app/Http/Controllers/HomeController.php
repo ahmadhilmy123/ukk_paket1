@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use App\User;
-use App\Pembayaran;
+use App\Models\User;
+use App\Models\Pembayaran;
 
 class HomeController extends Controller
 {
@@ -28,7 +28,7 @@ class HomeController extends Controller
     {
         $data = [
             'user' => User::find(auth()->user()->id),
-            'pembayaran' => Pembayaran::orderBy('id', 'ASC')->paginate(),
+            'pembayaran' => Pembayaran::orderBy('id', 'ASC')->paginate('1000'),
         ];
       
         return view('dashboard.index', $data);

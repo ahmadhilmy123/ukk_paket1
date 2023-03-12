@@ -1571,7 +1571,7 @@ table tr:hover .table-links {
   font-weight: 600;
 }
 .page-link:hover {
-  background-color: #6777ef;
+  background-color: #4b4c55;
   color: #fff;
   border-color: transparent;
 }
@@ -2168,7 +2168,7 @@ h6 .badge {
   padding-left: 20px;
   padding-right: 0;
   margin-right: -6px;
-  min-height: 46px;
+  min-height: 45px;
   font-weight: 500;
   border-radius: 3px 0 0 3px;
   transition: all 1s;

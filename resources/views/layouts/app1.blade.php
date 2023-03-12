@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no"
         name="viewport">
+        <link rel="shortcut icon" href="img/avatar/taruna.ico" type="image/x-icon">
     <title>@yield('title') &mdash; Stisla</title>
 
     <!-- General CSS Files -->

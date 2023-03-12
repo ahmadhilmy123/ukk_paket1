@@ -1,11 +1,13 @@
 @extends('layouts.app')
 
-@section('title', 'History')
+@section('title', 'Data-Siswa')
+
 
 @push('style')
 <link rel="stylesheet" href="{{ asset('library/datatables/media/css/jquery.dataTables.min.css') }}">
 <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap4.min.css" />
 <link rel="stylesheet" href="https://cdn.datatables.net/select/1.3.3/css/select.bootstrap4.min.css" />
+<link rel="shortcut icon" href="{{ asset('img/avatar/taruna.ico') }}" type="image/x-icon">
 @endpush
 
 @section('main')
@@ -79,7 +81,7 @@
                         </div>
 
                         <!-- Pagination -->
-                        @if($siswa->lastPage() != 1)
+                        {{-- @if($siswa->lastPage() != 1)
                         <div class="btn-group float-right">
                             <a href="{{ $siswa->previousPageUrl() }}" class="btn btn-success">
                                 <i class="mdi mdi-chevron-left"></i>
@@ -92,7 +94,7 @@
                                     <i class="mdi mdi-chevron-right"></i>
                                 </a>
                         </div>
-                        @endif
+                        @endif --}}
                     </div>
                 </div>
             </div>

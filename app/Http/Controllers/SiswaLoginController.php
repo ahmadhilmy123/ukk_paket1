@@ -5,9 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Alert;
 use Session;
-use App\Siswa;
+use App\Models\Siswa;
 use Dompdf\Dompdf;
-use App\Pembayaran;
+use PDF;
+use App\Models\Pembayaran;
 
 class SiswaLoginController extends Controller
 {
@@ -72,16 +73,28 @@ class SiswaLoginController extends Controller
       return view('dashboard.siswa.index1', $data);
     }
 
+    // public function create(){
+
+    // $siswa = session('id');
+    // $pembayaran = Pembayaran::where('id_siswa', $siswa)->orderBy('created_at', 'ASC')->get();
+
+    // $html = view('pdf.laporan1', compact('pembayaran'))->render();
+    // $dompdf = new Dompdf();
+    // $dompdf->loadHtml($html);
+    // $dompdf->setPaper('A4', 'portrait');
+    // $dompdf->render();
+    // return $dompdf->stream('BUKTI-PEMBAYARAN-SISWA');
+    // }
+
     public function create(){
+        $siswa = session('id');
+        PDF::setOptions(['dpi' => 150, 'defaultFont' => 'sans-serif']);
+     
+      $data = [
+          'pembayaran' => Pembayaran::where('id_siswa', $siswa)->orderBy('created_at', 'ASC')->get()
+        ];
 
-    $siswa = session('id');
-    $pembayaran = Pembayaran::where('id_siswa', $siswa)->orderBy('created_at', 'ASC')->get();
-
-    $html = view('pdf.laporan1', compact('pembayaran'))->render();
-    $dompdf = new Dompdf();
-    $dompdf->loadHtml($html);
-    $dompdf->setPaper('A4', 'portrait');
-    $dompdf->render();
-    return $dompdf->stream('BUKTI-PEMBAYARAN-SISWA');
+        $pdf = PDF::loadView('pdf.laporan1', $data);
+        return $pdf->stream('BUKTI-PEMBAYARAN-SISWA');
     }
 }

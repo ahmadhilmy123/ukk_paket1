@@ -4,10 +4,8 @@
 
 @push('style')
     <!-- CSS Libraries -->
-    <link rel="stylesheet"
-        href="{{ asset('library/bootstrap-social/bootstrap-social.css') }}">
-
-    
+    <link rel="stylesheet" href="{{ asset('library/bootstrap-social/bootstrap-social.css') }}">
+    <link rel="shortcut icon" href="{{ asset('img/avatar/taruna.ico') }}" type="image/x-icon">    
 @endpush
 
 

@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Pembayaran;
-use App\User;
-use App\Siswa;
+use App\Models\Pembayaran;
+use App\Models\User;
+use App\Models\Siswa;
 use Alert;
 
 class PembayaranController extends Controller
@@ -26,7 +26,7 @@ class PembayaranController extends Controller
     public function index()
     {
         $data = [
-            'pembayaran' => Pembayaran::orderBy('id', 'ASC')->paginate(),
+            'pembayaran' => Pembayaran::orderBy('id', 'ASC')->paginate('1000'),
             'user' => User::find(auth()->user()->id)
         ];
       
@@ -54,7 +54,7 @@ class PembayaranController extends Controller
       
         $message = [
             'required' => ':attribute harus di isi',
-            'numeric' => ':attribute harus berupa angka',
+            'string' => ':attribute harus berupa angka',
             'min' => ':attribute minimal harus :min angka',
             'max' => ':attribute maksimal harus :max angka',
          ];
@@ -62,7 +62,7 @@ class PembayaranController extends Controller
         $req->validate([
             'nisn' => 'required',
             'spp_bulan' => 'required',
-            'jumlah_bayar' => 'required|numeric'
+            'jumlah_bayar' => 'required|string'
          ], $message);
          
          if(Siswa::where('nisn',$req->nisn)->exists() == false):
@@ -128,7 +128,7 @@ class PembayaranController extends Controller
     {
          $message = [
             'required' => ':attribute harus di isi',
-            'numeric' => ':attribute harus berupa angka',
+            'string' => ':attribute harus berupa angka',
             'min' => ':attribute minimal harus :min angka',
             'max' => ':attribute maksimal harus :max angka',
          ];
@@ -136,7 +136,7 @@ class PembayaranController extends Controller
         $req->validate([
             'nisn' => 'required',
             'spp_bulan' => 'required',
-            'jumlah_bayar' => 'required|numeric'
+            'jumlah_bayar' => 'required|string'
          ], $message);
          
          $pembayaran = Pembayaran::find($id);
@@ -165,7 +165,7 @@ class PembayaranController extends Controller
          endif;
          
          Alert::success('Berhasil!', 'Pembayaran berhasil di Edit');
-         return back();
+         return redirect('dashboard/pembayaran');
     }
 
     /**

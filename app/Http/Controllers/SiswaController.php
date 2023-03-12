@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\User;
-use App\Siswa;
-use App\Kelas;
-use App\Spp;
-use App\Pembayaran;
+use App\Models\User;
+use App\Models\Siswa;
+use App\Models\Kelas;
+use App\Models\Spp;
+use App\Models\Pembayaran;
 use Alert;
 
 class SiswaController extends Controller
@@ -29,7 +29,7 @@ class SiswaController extends Controller
     {
 	   $data = [
             'user' => User::find(auth()->user()->id),
-            'siswa' => Siswa::orderBy('id', 'ASC')->paginate(),
+            'siswa' => Siswa::orderBy('id', 'ASC')->paginate('1000'),
         ];
       
         return view('dashboard.data-siswa.index', $data);
@@ -72,7 +72,7 @@ class SiswaController extends Controller
              'kelas' => 'required|integer',
              'nomor_telepon' => 'required|numeric',
              'alamat' => 'required',
-             'spp' => 'required|integer',
+             'spp' => 'required|string',
         ], $messages);
         
         if($validasi) :
@@ -147,7 +147,7 @@ class SiswaController extends Controller
              'kelas' => 'required|integer',
              'nomor_telepon' => 'required|numeric',
              'alamat' => 'required',
-             'spp' => 'required|integer',
+             'spp' => 'required|string',
         ], $messages);
         
         if($validasi) :            

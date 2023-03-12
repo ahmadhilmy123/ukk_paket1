@@ -1,11 +1,12 @@
 @extends('layouts.app')
 
-@section('title', 'History')
+@section('title', 'Data-SPP')
 
 @push('style')
 <link rel="stylesheet" href="{{ asset('library/datatables/media/css/jquery.dataTables.min.css') }}">
 <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap4.min.css" />
 <link rel="stylesheet" href="https://cdn.datatables.net/select/1.3.3/css/select.bootstrap4.min.css" />
+<link rel="shortcut icon" href="{{ asset('img/avatar/taruna.ico') }}" type="image/x-icon">
 @endpush
 
 @section('main')
@@ -69,7 +70,7 @@
                                     <tr>
                                         <th scope="row">{{ $i }}</th>
                                         <td>{{ $value->tahun }}</td>
-                                        <td>{{ $value->nominal }}</td>
+                                        <td>Rp.{{ $value->nominal }}</td>
                                         <td>{{ $value->created_at->format('d M, Y') }}</td>
                                         <td>
                                           <div class="container d-flex" style="margin: 0;padding: 0;">
@@ -99,7 +100,7 @@
                     </div>
 
                     <!-- Pagination -->
-                    @if($spp->lastPage() != 1)
+                    {{-- @if($spp->lastPage() != 1)
                     <div class="btn-group float-right">
                         <a href="{{ $app->previousPageUrl() }}" class="btn btn-success">
                             <i class="mdi mdi-chevron-left"></i>
@@ -112,7 +113,7 @@
                                 <i class="mdi mdi-chevron-right"></i>
                             </a>
                     </div>
-                    @endif
+                    @endif --}}
                     <!-- End Pagination -->
 
                 </div>

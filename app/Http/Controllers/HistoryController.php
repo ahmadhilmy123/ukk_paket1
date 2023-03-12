@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Alert;
-use App\Pembayaran;
-use App\User;
+use App\Models\Pembayaran;
+use App\Models\User;
 
 class HistoryController extends Controller
 {
@@ -17,7 +17,7 @@ class HistoryController extends Controller
     public function index()
     {
         $data = [
-            'pembayaran' => Pembayaran::orderBy('id', 'ASC')->paginate(15),
+            'pembayaran' => Pembayaran::orderBy('id', 'ASC')->paginate('1000'),
             'user' => User::find(auth()->user()->id)
          ];
          

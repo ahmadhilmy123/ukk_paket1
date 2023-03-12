@@ -25,7 +25,7 @@ class CreatePembayaranTable extends Migration
          #$table->string('tahun_bayar', 4);
          #$table->bigInteger('id_spp')->unsigned();
          #$table->foreign('id_spp')->references('id')->on('siswa');
-            $table->integer('jumlah_bayar');
+            $table->string('jumlah_bayar');
             $table->timestamps();
         });
     }

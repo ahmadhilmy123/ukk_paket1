@@ -1,11 +1,12 @@
 @extends('layouts.app')
 
-@section('title', 'History')
+@section('title', 'Pembayaran')
 
 @push('style')
 <link rel="stylesheet" href="{{ asset('library/datatables/media/css/jquery.dataTables.min.css') }}">
 <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap4.min.css" />
 <link rel="stylesheet" href="https://cdn.datatables.net/select/1.3.3/css/select.bootstrap4.min.css" />
+<link rel="shortcut icon" href="{{ asset('img/avatar/taruna.ico') }}" type="image/x-icon">
 @endpush
 
 @section('main')
@@ -30,7 +31,7 @@
                            <div>SPP Bulan <b class="text-capitalize ">{{ $value->spp_bulan }}</b></div>
                            <div>Nominal SPP Rp.{{ $spp = $value->siswa->spp->nominal }}</div>
                            <div>Bayar Rp.{{ $bayar = $value->jumlah_bayar }}</div>
-                           <div>Tunggakan Rp.{{ $spp - $bayar }}</div>                        
+                           <div>Tunggakan Rp.{{ $spp - $bayar }}.000</div>                        
                      </div>
                   @endforeach 
                          <!-- Pagination -->
